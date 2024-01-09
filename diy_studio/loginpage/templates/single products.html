@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>single products</title>
+</head>
+<style>
+    .{
+        margin:0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+        font-family: 'Lora', serif;
+    }
+    .navbar{
+        display: flex;
+        align-items: center;
+        padding: 20px;
+    }
+    nav{
+        flex:1;
+        text-align: right;
+    }
+    nav ul{
+        display: inline-block;
+        list-style-type: none;
+    }
+    nav ul li{
+        display: inline-block;
+        margin-right: 20px;
+    }
+    a{
+        text-decoration:none;
+        color: #555;
+    }
+    p{
+        color: #555;
+    }
+    .container{
+            max-width:1300px;
+            margin:auto;
+            padding-left: 25px;
+            padding-right: 25px;
+    }
+    .row{
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .col-2{
+        flex-basis: 50%;
+        min-width: 300px;
+    }
+    .col-2 img{
+            max-width: 100%;
+            padding: 50px 0;
+    }
+    .col-2 h1{
+            font-size:50px;
+            line-height: 60px;
+            margin: 25px 0;
+    }
+    .btn{
+        display: inline-block;
+        background: #ff523b;
+        color: #fff;
+        padding: 8px 30px;
+        margin: 30px 0;
+        border-radius: 30px;
+        transition: background 0.55;
+    }
+    .btn:hover{
+        background: #563434;
+
+    }
+    .header{
+        background: radial-gradient(#fff,#F9C2EC);
+    }
+    .header .row{
+        margin-top: 70px;
+    }
+    .categories{
+        margin: 70px 0;
+    }
+    .col-3{
+        flex-basis: 30%;
+        min-width: 250px;
+        margin-bottom: 30px;
+    }
+    .col-3 img{
+        width: 100%;
+    }
+    .small-container{
+        max-width:1080px;
+        margin: auto;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .col-4{
+        flex-basis: 25%;
+        padding:1px;
+        min-width: 100px;
+        margin-bottom: 50px;
+        transition: transform 0.5s;
+    }
+    .col-4 img{
+        width:80%;
+    }
+    .title{
+        text-align:center;
+        margin: 0 auto 80px;
+        position: relative;
+        line-height: 60px;
+        color: #555;
+    }
+    .title::after{
+        content: '';
+        background: #ff523b;
+        width: 100px;
+        height:5px;
+        border-radius: 10px;
+        position:absolute;
+        bottom: 0;
+        left:50%;
+        transform: translateX(-50%);
+    }
+    h4{
+        color: #555;
+        font-weight: normal;
+    }
+    .col-4 p{
+        font-size: 14px;
+    }
+    .col-4:hover{
+        transform: translatex(-5px);
+    }
+    .offer{
+        background: radial-gradient(#fff,#F9C2EC);
+        margin-top: 80px;
+        padding: 30px 0;
+    }
+    .offer-img{
+        width: 400px;
+    }
+    .footer{
+        background:#F883DC;
+        color: #000;
+        font-size: 14px;
+        padding: 60px 0 20px;
+    }
+    .logo-2{
+        display:block;
+        width:60%;
+        margin: auto;
+        width:100px;
+    }
+    .footer p{
+        color: #000;
+    }
+    .footer h3{
+        color: #fff;
+        margin-bottom: 20px;
+    }
+    .footer-col-1,.footer-col-2,.footer-col-3,.footer-col-4{
+        min-width: 250px;
+        margin-bottom: 200px;
+    }
+    .footer-col-1{
+        flex-basis: 30%;
+    }
+    .footer-col-2{
+        flex: 1;
+        text-align: center;
+    }
+    .footer-col-2 img{
+        width: 180px;
+        margin-bottom: 20px;
+    }
+    .footer-col-3,..footer-col-4{
+        flex-basis: 32%;
+        text-align: center;
+    }
+    ul{
+        list-style-type: none;
+    }
+    .app-logo{
+        margin-top: 20px;
+    }
+    .app-logo img{
+        width:140px;
+    }
+    .footer hr{
+        border: none;
+        background: #b5b5b5;
+        height: 1px;
+        margin: 20px 0;
+    }
+    .copyright{
+        text-align: center;
+    }
+    .single product{
+        margin-top: 80px;
+    }
+    .single-product .col-2 img{
+        padding: 0;
+    }
+    .single-product .col-2{
+        padding: 20px;
+    }
+    .single-product h4{
+        margin: 20px 0;
+        font-size: 22px;
+        font-weight: bold;
+    }
+    .single-product select{
+        display: block;
+        padding: 10px;
+        margin-top: 20px;
+    }
+    .single-product input{
+        width: 50px;
+        height: 40px;
+        padding-left: 10px;
+        font-size: 20px;
+        margin-right:10px;
+        border: 1px solid #ff523b;
+    }
+    input:focus{
+        outline: none;
+    }
+
+
+
+</style>
+<body>
+<div class="header">
+    <div class="container">
+     <div class="navbar">
+        <div class="logo">
+            <img src="/static/images/Bold Company Name Typography Initials Logo (1).png" width="125px">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/loginpage/webpage/">Home</a></li>
+                <li><a href="/loginpage/products/">Products</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Contact</a></li>
+                <li><a href="">Account</a></li>
+
+
+
+
+            </ul>
+        </nav>
+         <a href="" ><img src="/static/images/shopping-cart-icon-2048x1842-etrk1yv6.png"  width="30px" height="30px" ></a>
+    </div>
+
+    </div>
+</div>
+<!------------single products------------>
+<div class="small-container single products">
+    <div class="row">
+        <div class="col-2">
+            <img src="/static/images/bottle art flowr.png" width="100%">
+
+        </div>
+        <div class="col-2">
+            <p>Home /bottles</p>
+            <h1>Flowered Bottle Art</h1>
+            <h4>&#8377; 180/-</h4>
+            <input type="number" value="1">
+            <a href="" class="btn">Add to Cart</a>
+            <h3>Product Details</h3>
+            <p>Clay Bottle Art With LED Lights at Rs Bottle art Diy glass bottle crafts, Bottle art CLAY ART ON ...</p>
+        </div>
+    </div>
+</div>
+
+<!------------featured products-------->
+<div class="small-container">
+    <h2 class="title">Related Products</h2>
+    <div class="row">
+
+         <div class="col-4">
+            <img src="/static/images/button flowr.png">
+            <h4>Button Paper Roses</h4>
+            <p>&#8377; 200/-</p>
+        </div>
+         <div class="col-4">
+            <img src="/static/images/photo frm2.png">
+            <h4>Vintage Photo Frame</h4>
+            <p>&#8377; 120/-</p>
+        </div>
+         <div class="col-4">
+            <img src="/static/images/bells flowr.png">
+            <h4>Bell Flowers</h4>
+            <p>&#8377; 180/-</p>
+        </div>
+          <div class="row">
+        <div class="col-4">
+            <img src="/static/images/WhatsApp Image 2024-01-02 at 8.01.31 PM.jpeg">
+            <h4>Cloth Flower</h4>
+            <p>&#8377; 230/-</p>
+        </div>
+         <div class="col-4">
+            <img src="/static/images/vintage bouqet.jpeg">
+            <h4>Mini Vintage Bouquet</h4>
+            <p>&#8377; 100/-</p>
+        </div>
+         <div class="col-4">
+            <img src="/static/images/bulb hanging.jpeg">
+            <h4>Bulb Hangings</h4>
+            <p>&#8377; 200/-</p>
+        </div>
+         <div class="col-4">
+            <img src="/static/images/paper hanging.jpeg">
+            <h4>Mini Paper Hangings</h4>
+            <p>&#8377; 130/-</p>
+        </div>
+           <div class="col-4">
+            <img src="/static/images/funny faces.jpeg">
+            <h4>Funny Face Bottle Art</h4>
+            <p>&#8377; 150/-</p>
+        </div>
+          <div class="col-4">
+            <img src="/static/images/plant pot.jpeg">
+            <h4>Plant Pot</h4>
+            <p>&#8377; 200/-</p>
+        </div>
+
+    </div>
+</div>
+    <!---------offer---------->
+
+<!--------footer----------->
+<div class="footer">
+    <div class="container">
+        <div class="row">
+                <div class="footer-col-1">
+                    <h3>Download our App</h3>
+                    <p>Download App for Android and ios Mobile phone.</p>
+                    <div class="app-logo">
+                        <img src="https://cdn.worldvectorlogo.com/logos/google-play-badge-2022-2.svg">
+                        <img src="https://cdn.icon-icons.com/icons2/2699/PNG/512/apple_appstore_logo_icon_168587.png">
+                    </div>
+                </div>
+                 <div class="footer-col-2">
+
+                     <img src="/static/images/Bold Company Name Typography Initials Logo (1).png" class="logo-2">
+
+                    <p>Our purpose is to sustainably make the pleasure and benefits for the home nature.</p>
+                </div>
+                 <div class="footer-col-3">
+                    <h3>Useful Links</h3>
+                    <ul>
+                        <li>Coupons</li>
+                        <li>Blog Post</li>
+                        <li>Return Policy</li>
+                        <li>Join Affiliate</li>
+                    </ul>
+                </div>
+                <div class="footer-col-4">
+                    <h3>Follow US</h3>
+                    <ul>
+                        <li>Facebook</li>
+                        <li>Twitter</li>
+                        <li>Instagram</li>
+                        <li>YouTube</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <p class="copyright">Copyright 2024 - Easy Tutorials</p>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
